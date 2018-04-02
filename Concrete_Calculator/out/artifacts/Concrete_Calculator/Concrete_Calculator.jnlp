@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Concrete_Calculator.jnlp">
+    <information>
+        <title>Main</title>
+        <vendor>未知</vendor>
+        <description>Main</description>
+        <offline-allowed/>
+    </information>
+    <update check="always"/>
+    <resources>
+        <j2se version="9.0.4+" href="http://java.sun.com/products/autodl/j2se"/>
+        <jar href="Concrete_Calculator.jar" size="71207" download="eager"/>
+    </resources>
+    <jfx:javafx-desc width="700" height="500" main-class="Main" name="Main"/>
+</jnlp>
+

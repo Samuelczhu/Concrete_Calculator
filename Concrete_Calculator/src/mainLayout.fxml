@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <top>
+      <VBox alignment="TOP_CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="编辑">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#calculate" text="计算" />
+                        <MenuItem mnemonicParsing="false" onAction="#addItem" text="增加" />
+                        <MenuItem mnemonicParsing="false" onAction="#deleteItem" text="删除" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="帮助">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#showInfo" text="关于" />
+                        <MenuItem mnemonicParsing="false" onAction="#showEquation" text="公式" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="混凝土抗压强度计算器" textAlignment="CENTER" textFill="#2c16a8">
+               <VBox.margin>
+                  <Insets bottom="5.0" top="25.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </VBox>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="inputTable" minWidth="10.0" VBox.vgrow="ALWAYS">
+              <columns>
+                <TableColumn fx:id="PlaceUsed" prefWidth="200.0" text="使用部位" />
+                <TableColumn fx:id="StiffLevel" prefWidth="100.0" text="设计强度等级C" />
+                  <TableColumn fx:id="SampleAge" prefWidth="100.0" text="试件龄期(d)" />
+                  <TableColumn fx:id="RepresentData" prefWidth="150.0" text="试件强度代表值(MPa)" />
+                  <TableColumn fx:id="ReachPercent" prefWidth="150.0" text="达到设计强度(％)" />
+              </columns>
+            </TableView>
+            <HBox minHeight="37.0" spacing="5.0">
+               <children>
+                  <TextField fx:id="placeInput" promptText="使用部位" />
+                  <TextField fx:id="stiffInput" layoutX="10.0" layoutY="10.0" promptText="设计强度等级C" />
+                  <TextField fx:id="ageInput" layoutX="10.0" layoutY="10.0" promptText="试件龄期(d)" />
+                  <TextField fx:id="representInput" layoutX="10.0" layoutY="10.0" promptText="试件强度代表值(MPa)" />
+                  <Button fx:id="addButton" minWidth="50.0" mnemonicParsing="false" onAction="#addItem" text="增加" />
+                  <Button layoutX="654.0" layoutY="10.0" minWidth="50.0" mnemonicParsing="false" onAction="#deleteItem" text="删除" />
+               </children>
+               <padding>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox maxHeight="25.0" maxWidth="1.7976931348623157E308" minHeight="25.0" prefHeight="25.0" BorderPane.alignment="BOTTOM_LEFT">
+         <children>
+            <Label text="欢迎使用混凝土抗压强度计算器，请使用编辑计算。">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </padding>
+      </HBox>
+   </bottom>
+</BorderPane>
